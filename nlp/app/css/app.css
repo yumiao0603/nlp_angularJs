@@ -1,0 +1,269 @@
+html, body, div, p, ul, li, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+body {
+  position: relative;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 14px;
+  font-family: "Arial", "Microsoft YaHei", "Sans serif"; }
+
+ul, ol {
+  list-style: none; }
+
+li {
+  display: inline-block; }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #26AAB6; }
+
+.hidden {
+  display: none; }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none; }
+
+.btn-search {
+  padding: 14px;
+  background-color: #26AAB6;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 16px; }
+
+.icon {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  vertical-align: middle; }
+
+.icon-btn {
+  background: url(../img/icon-btn.png);
+  background-size: cover; }
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  background-image: url(../img/uni2.jpg);
+  background-size: 100%; }
+
+.container {
+  width: 1024px;
+  display: table;
+  height: inherit;
+  margin: 0 auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fcfcfc;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0 1px; }
+  .container .view-wrap {
+    display: table-cell;
+    position: relative; }
+    .container .view-wrap .search-wrap {
+      position: relative;
+      display: inline-block; }
+      .container .view-wrap .search-wrap .search-input {
+        width: 260px;
+        padding: 13px 10px;
+        margin: 0 0 10px;
+        outline: none;
+        border: 1px #D2D2D2 solid;
+        border-radius: 2px;
+        font-size: 16px; }
+      .container .view-wrap .search-wrap .exp {
+        font-size: 14px; }
+      .container .view-wrap .search-wrap .button {
+        font-size: 16px;
+        background-color: #bbb;
+        cursor: auto; }
+      .container .view-wrap .search-wrap .suggest-list {
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 280px;
+        border: 1px #ccc solid;
+        border-top: 0 none;
+        background-color: #fff; }
+        .container .view-wrap .search-wrap .suggest-list > li {
+          display: block;
+          text-align: left;
+          border-top: 1px #d2d2d2 solid;
+          cursor: pointer; }
+          .container .view-wrap .search-wrap .suggest-list > li > a {
+            display: block;
+            padding: 12px; }
+          .container .view-wrap .search-wrap .suggest-list > li:first-child {
+            border-top: 0 none; }
+          .container .view-wrap .search-wrap .suggest-list > li:hover {
+            background-color: #eee; }
+    .container .view-wrap .ng-view-container {
+    	position:relative;
+      margin: 30px 0 0;
+      padding: 0 0 20px;
+      text-align: left; }
+      .container .view-wrap .ng-view-container h1 {
+        font-weight: bold;
+        font-size: 40px; }
+      .container .view-wrap .ng-view-container .section {
+        padding: 20px 0;
+        border-bottom: 1px #ccc solid; }
+        .container .view-wrap .ng-view-container .section h2 {
+          font-size: 20px;
+          margin: 0 0 10px; }
+        .container .view-wrap .ng-view-container .section .images {
+          height: 150px;
+          padding: 0 10px 0 0; }
+        .container .view-wrap .ng-view-container .section .info-table {
+          border: 1px solid #ddd;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px; }
+          .container .view-wrap .ng-view-container .section .info-table tr:nth-child(even) {
+            background-color: #F1F2EF; }
+          .container .view-wrap .ng-view-container .section .info-table td {
+            padding: 12px;
+            border: 1px solid #ddd; }
+        .container .view-wrap .ng-view-container .section .text {
+          text-indent: 2em;
+          line-height: 140%; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  text-align: center; }
+
+.node {
+  stroke-width: 1.5px; }
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges; }
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 10px; }
+
+.timeline-label {
+  font-family: sans-serif;
+  font-size: 12px; }
+
+.coloredDiv {
+  height: 20px;
+  width: 20px;
+  float: left; }
+
+.allmap {
+  height: 500px; }
+
+.node {
+  stroke-width: 1.6px;
+  cursor: pointer; }
+
+.node:hover circle {
+  fill: #000;
+  fill-opacity: 0.3; }
+
+.force {
+  background-color: #333; }
+
+text {
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  text-anchor: middle;
+  pointer-events: none;
+  fill: #fff; }
+
+circle {
+  stroke: #999;
+  stroke-width: 2px; }
+
+.marker-active {
+  fill: #e13c6e; }
+.marker-white{
+	fill: #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #e13c6e;
+  stroke-width: 1.5px; }
+
+.avatar {
+  border-radius: 50%; }
+
+@keyframes fill {
+  0% {
+    fill: black; }
+  50% {
+    fill: white; }
+  100% {
+    fill: black; } }
+.bar, .pie, .line, .expansion {
+  width: 100%;
+  height: 400px; }
+
+.expansion {
+  height: 600px; }
+  .expansion svg {
+    width: 100%;
+    height: 100%; }
+
+.relation-graph {
+  background-color: #444;
+  border-radius: 30px;
+  overflow: hidden; }
+
+.timeline {
+  background-color: #4E7DE4;
+  border-radius: 10px; }
+  .timeline .axis path, .timeline .axis line {
+    stroke: #fff; }
+
+.search-list-wrap .search-list .search-item {
+  display: block;
+  margin: 10px 0;
+  border: 1px #bbb solid;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.5s; }
+  .search-list-wrap .search-list .search-item .search-item-link {
+    display: block;
+    padding: 20px;
+    color: #444; }
+  .search-list-wrap .search-list .search-item .search-item-name {
+    margin: 0 0 10px; }
+  .search-list-wrap .search-list .search-item:hover {
+    background-color: #EAFDFF; }
+.loading-text{
+  padding: 30px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin: 0 0 0 -60px;
+  text-align: center;
+  background-color: #fff;
+  color: #444;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+}

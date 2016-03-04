@@ -1,0 +1,47 @@
+<h1 id="entity_name">{{title}}</h1>
+<div class="section" ng-repeat="key in dataKeys" ng-if="subjectData[key] !== null">
+
+    <h2 ng-if=" key !== 'description'">{{key}}</h2>
+
+    <table class="info-table" ng-if="subjectData[key].type === 'kvTable'">
+        <tr ng-repeat="(key, value) in subjectData[key].data" ng-if="key !== 'type'">
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+        </tr>
+    </table>
+
+    <ul ng-if="subjectData[key].type === 'images'">
+        <li ng-repeat="(key, value) in subjectData[key].data" ng-if="key !== 'type'">
+            <img class="images" ng-src="{{value}}">
+        </li>
+    </ul>
+
+    <div class="force" ng-if="subjectData[key].type === 'force'">
+        <svg></svg>
+    </div>
+
+    <div class="timeline" ng-if="subjectData[key].type === 'timeline'"></div>
+
+    <div class="bar" id="bar" ng-if="subjectData[key].type === 'bar'"></div>
+
+    <div class="pie" id="pie" ng-if="subjectData[key].type === 'pie'"></div>
+
+    <div class="line" id="line" ng-if="subjectData[key].type === 'line'"></div>
+
+    <div class="allmap" id="allmap" ng-if="subjectData[key].type === 'map'"></div>
+
+    <div class="expansion relation-graph" id="expansion" ng-if="subjectData[key].type === 'relations'">
+        <svg width="100%"></svg>
+    </div>
+
+    <div class="text" ng-if="subjectData[key].type === 'text'">
+        <p ng-repeat="(key, value) in subjectData[key]" ng-if="key !== 'type'">
+            {{value}}
+        </p>
+    </div>
+</div>
+
+<div class="loading-text" ng-show="loadingTextVisible">
+    <img src="../img/loading.gif"/>
+    <div>loading...</div>
+</div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf8">
+    <title>SPACE</title>
+    <link rel="stylesheet" href="css/space.css">
+</head>
+<body>
+
+<div ng-controller="AppCtrl" id="container" class="container">
+    <div class="event-layer" ng-click="showMovieCover($event, 'movie')"></div>
+
+    <div class="info-wrap hidden"
+         ng-style="{ 'left': clickPointLeft, 'top': clickPointTop }">
+
+        <img class="img-particle" src="img/space/particle3.png" alt="particle"
+             ng-show="isStarVisible" ng-cloak/>
+
+        <div class="info"
+             ng-show="isInfoVisible"
+             ng-mouseenter="showInfo()"
+             ng-mouseleave="hideInfo()"
+             ng-style="{ 'left': infoLeft, 'top': infoTop }"
+             ng-cloak>
+            <div class="info-background">
+                <div class="info-cover img-blur"
+                     ng-style="{'background-image': movieInfo.cover}"></div>
+                <div class="white-cover"></div>
+            </div>
+
+            <div class="info-content">
+                <div class="info-head">
+                    <h2>{{movieInfo.title}}</h2>
+                </div>
+
+                <div class="info-body">
+                    <div class="info-section">
+                        <h3 class="info-section-title">基本信息</h3>
+
+                        <div class="info-property" ng-repeat="(key, value) in movieInfo.properties">
+                            {{key}}：{{value}}
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3 class="info-section-title">剧情简介</h3>
+
+                        <p class="summary">
+                            {{movieInfo.summary}}
+                        </p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3 class="info-section-title">主演</h3>
+
+                        <div class="cast-wrap">
+                            <ul class="cast-list" ng-style="{ 'width': imageListWidth}">
+                                <li class="inb cast-item" ng-repeat="cast in movieInfo.casts">
+                                    <a href="javascript:void(0);" class="overdot cast-link"
+                                       ng-click="showMovieCover($event, 'cele', cast.id)">{{cast.name}}</a>
+                                    <img class="cast-avatar" ng-src="{{cast.avatar}}" alt="avatar">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info"
+             ng-show="isCeleInfoVisible"
+             ng-mouseenter="showInfo()"
+             ng-mouseleave="hideInfo()"
+             ng-style="{ 'left': infoLeft, 'top': infoTop }"
+             ng-cloak>
+
+            <div class="info-background info-cele-background">
+                <div class="info-cover img-blur"
+                     ng-style="{'background-image': celeInfo.cover}">
+                 </div>
+                <div class="white-cover"></div>
+            </div>
+
+            <div class="info-content">
+                <div class="info-head">
+                    <h2>{{celeInfo.name}}</h2>
+                </div>
+
+                <div class="info-body">
+                    <div class="info-section">
+                        <h3 class="info-section-title">基本信息</h3>
+
+                        <div class="info-property" ng-repeat="(key, value) in celeInfo.properties">
+                            {{key}}：{{value}}
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3 class="info-section-title">演出作品</h3>
+
+                        <div class="cast-wrap">
+                            <ul class="cast-list" ng-style="{ 'width': imageListWidth}">
+                                <li class="inb cast-item" ng-repeat="work in celeInfo.works">
+                                    <a href="javascript:void(0);" class="overdot cast-link"
+                                       ng-click="showMovieCover($event, 'movie', work.id)">{{work.title}}</a>
+                                    <img class="cast-avatar" ng-src="{{work.avatar}}" alt="avatar" onerror="this.style.visibility='hidden'">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/lib/d3.js"></script>
+<script src="js/lib/three.js"></script>
+<script src="js/lib/jquery-1.11.2.min.js"></script>
+
+
+
+</body>
+</html>

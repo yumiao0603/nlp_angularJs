@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div ng-controller="AppCtrl" class="container">
+  <div class="view-wrap">
+    <div class="search-wrap" ng-keypress="searchByEnter($event)">
+      <input placeholder="请在这里输入..." class="search-input"
+             ng-model="searchKey"
+             ng-focus="getSuggestion()"
+             ng-keyup="getSuggestion()"
+             ng-blur="hideSuggestion()">
+
+      <a href="javascript:void(0)" class="btn-search" ng-click="search()">
+        <i class="icon icon-btn"></i>搜索
+      </a>
+
+      <div class="exp">
+        <a href="#/s/怀进鹏">怀进鹏</a>
+        <a href="#/s/北京">北京</a>
+        <a href="#/s/万里">万里</a>
+        <a href="#/s/《千与千寻》">千与千寻</a>
+        <a href="#/s/中国足球超级联赛">中国足球超级联赛</a>
+      </div>
+
+      <ul class="suggest-list" ng-show="suggestions.length" ng-cloak>
+        <li ng-repeat="sug in suggestions" ng-mousedown="preventBlur($event)" ng-click="hideSuggestion()">
+          <a ng-href="/s/{{sug}}">{{sug}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="ng-view-container" ng-view></div>
+
+    <div class="footer">v<span app-version></span></div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1b1797c6c289c80cb6bd1a3757a3367e"></script>
+<script src="js/lib/echarts/build/dist/echarts.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="js/lib/d3.js"></script>
+<script src="js/lib/d3-timeline-master/src/d3-timeline.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/services_api.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+</body>
+</html>

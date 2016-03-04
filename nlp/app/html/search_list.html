@@ -1,0 +1,11 @@
+<div class="search-list-wrap">
+    <h1>搜索结果</h1>
+    <ul class="search-list">
+        <li class="search-item" ng-repeat="item in resultList">
+            <a class="search-item-link" ng-href="/s/{{item.name}}">
+              <h2 class="search-item-name">{{item.name}}</h2>
+              <p>{{item.description}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
